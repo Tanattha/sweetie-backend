@@ -4,8 +4,7 @@ class CartItemsController < ApplicationController
         render json: CartItemSerializer.new(cart_items)
     end
 
-    def create 
-        
+    def create    
         cart_item = CartItem.create(cart_id: params[:cart_id], item_id: params[:item_id])
         cart = Cart.find(params[:cart_id])
         user = cart.user

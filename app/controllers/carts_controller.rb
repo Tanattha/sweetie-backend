@@ -14,6 +14,17 @@ class CartsController < ApplicationController
       cart.checkout = true 
       cart.save
       user = cart.user 
+      new_cart = Cart.create(user_id: user.id)
+      render json: CartSerializer.new(cart)
+    end
+
+    def checkout
+      cart = Cart.find(params[:id])
+      cart.checkout = true 
+      cart.save
+      user = cart.user 
+      
+      new_cart = Cart.create(user_id: user.id)
       render json: CartSerializer.new(cart)
     end
 end

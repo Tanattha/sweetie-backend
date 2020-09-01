@@ -5,7 +5,7 @@ class UsersController < ApplicationController
       end
   
       def create
-          user = User.create(username: params[:username], email: params[:email])
+          user = User.create(username: params[:name], email: params[:email], address: params[:address])
           #user.carts.build(checkout: params[:checkout])
           #user.save
           render json: UserSerializer.new(user)

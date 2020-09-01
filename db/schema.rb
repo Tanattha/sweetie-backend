@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_231804) do
+ActiveRecord::Schema.define(version: 2020_08_30_232107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cart_items", force: :cascade do |t|
+  create_table "cart_products", force: :cascade do |t|
     t.integer "cart_id"
-    t.integer "item_id"
+    t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "carts", force: :cascade do |t|
-    t.boolean "checkout"
+    t.boolean "checkout", default: false
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(version: 2020_08_27_231804) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "items", force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
     t.string "title"
+    t.string "description"
     t.integer "price"
     t.string "url"
     t.integer "category_id"
@@ -53,8 +54,9 @@ ActiveRecord::Schema.define(version: 2020_08_27_231804) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "name"
     t.string "email"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
