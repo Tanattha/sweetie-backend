@@ -3,5 +3,4 @@ class Product < ApplicationRecord
     has_many :carts, through: :cart_products
 
     has_many :reviews, dependent: :destroy
-    belongs_to :category
 end
