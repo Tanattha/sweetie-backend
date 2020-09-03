@@ -11,14 +11,21 @@ class UsersController < ApplicationController
           user.carts.build(checkout: true, user_id: user.id, total: params[:total])
           user.save
           if user.save        
-            get_cartItem = params[:cartItems]
-            get_cartId = user.carts.first.id
-            get_cartItem.each do |cartItem|
-              CartProduct.create(cart_id: get_cartId, product_id: cartItem.values.first)
-              puts "cart_id:  #{get_cartId}"
-              puts "product_id:  #{cartItem.values.first}"
+            @get_cartItem = params[:cartItems]
+            @get_cartId = user.carts.first.id
+            @get_cartItem.each do |cartItem|
+              CartProduct.create(cart_id: @get_cartId, product_id: cartItem.values.first)
             end
-            render json: get_cartItem
+            render json: user, :include => {
+              carts: {
+                  except: [:created_at, :updated_at],
+                  include: {
+                      cart_products:{ 
+                          include: :product
+                      }
+                  },
+              },
+              }, except: [:created_at, :updated_at]
           else
             render json: {message: "Something went wrong. Please make sure all fields are entered correctly."}
           end
