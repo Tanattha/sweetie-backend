@@ -1,21 +1,32 @@
+
 class UsersController < ApplicationController
+  
     def index
         users = User.all
-        render json: UserSerializer.new(users)
+        render json: users
       end
   
       def create
-          user = User.create(username: params[:name], email: params[:email], address: params[:address])
-          #user.carts.build(checkout: params[:checkout])
-          #user.save
-          render json: UserSerializer.new(user)
-          
-          
+          user = User.create(name: params[:name], email: params[:email])
+          user.carts.build(checkout: true, user_id: user.id, total: params[:total])
+          user.save
+          if user.save 
+            
+            binding.pry
+            
+            get_cartItem = params[:cartItems]
+            get_cartItem.each do |cart|
+              CartProduct.create(cart_id: user.carts.ids, product_id: params[:product_id])
+            end
+            render json: user
+          else
+            render json: {message: "Something went wrong. Please make sure all fields are entered correctly."}
+          end
       end
      
       def show
         user = User.find_by(id: params[:id])
-        render json: UserSerializer.new(user)
+        render json: user
       end
 
 end

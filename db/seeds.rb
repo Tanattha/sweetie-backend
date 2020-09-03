@@ -5,31 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+puts 'deleteing user...'
 User.destroy_all
-puts 'deleteing users...'
+puts 'deleteing product...'
 Product.destroy_all
-puts 'deleteing items...'
-
-
+puts 'deleteing cart_product...'
+CartProduct.destroy_all
+puts 'deleteing cart...'
+Cart.destroy_all
 
 puts 'seeding users'
-User.create(name: "test", email: "test@gmail.com", address: "1111 S Rd MD 22222")
-=begin
-Category.destroy_all
-puts 'deleteing categories...'
-puts 'seeding categories'
-categories = [
-    {title: "Cupcake"},
-    {title: "Donut"},
-    {title: "Cookie"},
-    {title: "Roll"},
-    {title: "Cake"}
-]
-categories.each do |category|
-  Category.create(category)
-end
-=end
+User.create(name: "test", email: "test@gmail.com")
 
 puts 'seeding products'
 products = [
@@ -45,14 +31,31 @@ products = [
     {title: "Roll1", price: 5, description: "des10", url: "/images/rolls/1.jpg", category: "roll"},
     {title: "Roll2", price: 5, description: "des11", url: "/images/rolls/2.jpg", category: "roll"},
     {title: "Roll3", price: 5, description: "des12", url: "/images/rolls/3.jpg", category: "roll"},
-    {title: "Cake1", price: 10, description: "des13", url: "/images/cakes/1.jpg", category: "cake"},
-    {title: "Cake2", price: 10, description: "des14", url: "/images/cakes/2.jpg", category: "cake"},
-    {title: "Cake3", price: 10, description: "des15", url: "/images/cakes/3.jpg", category: "cake"}
+    {title: "Brownie1", price: 10, description: "des13", url: "/images/brownies/1.jpg", category: "brownie"},
+    {title: "Brownie2", price: 10, description: "des14", url: "/images/brownies/2.jpg", category: "brownie"},
+    {title: "Brownie3", price: 10, description: "des15", url: "/images/brownies/3.jpg", category: "brownie"}
 ]
 products.each do |product|
     Product.create(product)
 end
 
+puts 'seeding cart_products'
+cart_products = [
+    {cart_id: 2, product_id: 1},
+    {cart_id: 2, product_id: 1},
+    {cart_id: 2, product_id: 3}
+]
+cart_products.each do |cart_product|
+    CartProduct.create(cart_product)
+end
+
+puts 'seeding cart'
+Cart.create(checkout: true, user_id: 2, total: 100)
 
 
 puts 'All Done!'
+getProductFromCart = CartProduct.where(cart_id: cart.id)
+
+getProductFromCart.each.find_by_id do |get|
+    get.
+end

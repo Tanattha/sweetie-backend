@@ -23,8 +23,9 @@ ActiveRecord::Schema.define(version: 2020_08_30_232107) do
   end
 
   create_table "carts", force: :cascade do |t|
-    t.boolean "checkout", default: false
     t.integer "user_id"
+    t.boolean "checkout", default: false
+    t.decimal "total", precision: 10, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_232107) do
   create_table "reviews", force: :cascade do |t|
     t.string "body"
     t.integer "user_id"
-    t.integer "item_id"
+    t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -50,7 +51,6 @@ ActiveRecord::Schema.define(version: 2020_08_30_232107) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
