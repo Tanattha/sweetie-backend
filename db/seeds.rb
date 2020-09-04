@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+
 puts 'deleteing user...'
 User.destroy_all
 puts 'deleteing product...'
@@ -13,6 +8,8 @@ puts 'deleteing cart_product...'
 CartProduct.destroy_all
 puts 'deleteing cart...'
 Cart.destroy_all
+puts 'deleteing review...'
+Review.destroy_all
 
 puts 'seeding users'
 User.create(name: "test", email: "test@gmail.com")
@@ -54,10 +51,10 @@ Cart.create(checkout: true, user_id: 2, total: 100)
 
 puts 'seeding reviews'
 reviews = [
-    {name: "test1", body: "test review1", product_id: 1},
-    {name: "test11", body: "test review11", product_id: 11},
-    {name: "test2", body: "test review2", product_id: 2},
-    {name: "test3", body: "test review3", product_id: 3}
+    {name: "Keven", body: "I love it!"},
+    {name: "Sarah", body: "Good price, Good taste"},
+    {name: "Natalia", body: "Highly Recommended!"},
+    {name: "Jill", body: "Taste so good, I'll buy it again"}
 ]
 reviews.each do |review|
     Review.create(review)
