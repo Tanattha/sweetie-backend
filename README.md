@@ -1,25 +1,35 @@
-# README
+[Sweetie-Frontend-Here](https://github.com/Tanattha/sweetie-frontend)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Sweetie-Backend
 
-Things you may want to cover:
+Manipulated the data persistence with a database by using Fetch(). Resources, models, controllers and associations included. Fully functional CRUD, MVC and RESTful conventions. 
 
-* Ruby version
+<img src="../imges/example.png" width="640" height="400" />
 
-* System dependencies
+## Live App
 
-* Configuration
+[CLICK HERE]
 
-* Database creation
+## Video Walkthrough
 
-* Database initialization
+[CLICK HERE]
 
-* How to run the test suite
+## Installation
 
-* Services (job queues, cache servers, search engines, etc.)
+Fork and clone repos
 
-* Deployment instructions
+    $ git clone https://github.com/Tanattha/sweetie-backend
 
-* ...
-# sweetie-backend
+Using two terminals, switch to each respective directory
+
+    $ cd sweetie-backend
+
+Startup the server for backend
+
+    $ rails s
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+
