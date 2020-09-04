@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     end 
 
     def create 
-         review = Review.create(body: params[:body], user_id: params[:user_id], product_id: params[:product_id] )
+         review = Review.create(name: params[:name], body: params[:body], user_id: params[:user_id], product_id: params[:product_id] )
          render json: review, except: [:created_at, :updated_at]
     end 
 
@@ -21,10 +21,8 @@ class ReviewsController < ApplicationController
 
     def destroy
         review = Review.find(params[:id])
-        
         id = review.id
         review.destroy
-
         render json: id, except: [:created_at, :updated_at]
 
     end 

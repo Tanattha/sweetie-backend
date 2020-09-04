@@ -52,10 +52,15 @@ end
 puts 'seeding cart'
 Cart.create(checkout: true, user_id: 2, total: 100)
 
+puts 'seeding reviews'
+reviews = [
+    {name: "test1", body: "test review1", product_id: 1},
+    {name: "test11", body: "test review11", product_id: 11},
+    {name: "test2", body: "test review2", product_id: 2},
+    {name: "test3", body: "test review3", product_id: 3}
+]
+reviews.each do |review|
+    Review.create(review)
+end
 
 puts 'All Done!'
-getProductFromCart = CartProduct.where(cart_id: cart.id)
-
-getProductFromCart.each.find_by_id do |get|
-    get.
-end

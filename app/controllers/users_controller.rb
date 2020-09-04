@@ -16,16 +16,7 @@ class UsersController < ApplicationController
             @get_cartItem.each do |cartItem|
               CartProduct.create(cart_id: @get_cartId, product_id: cartItem.values.first)
             end
-            render json: user, :include => {
-              carts: {
-                  except: [:created_at, :updated_at],
-                  include: {
-                      cart_products:{ 
-                          include: :product
-                      }
-                  },
-              },
-              }, except: [:created_at, :updated_at]
+            render json: user
           else
             render json: {message: "Something went wrong. Please make sure all fields are entered correctly."}
           end

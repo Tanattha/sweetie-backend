@@ -1,7 +1,7 @@
 class CartProductsController < ApplicationController
     def index
         cart_products = CartProduct.all
-        render json: CartProductSerializer.new(cart_products)
+        render json: cart_products
     end
 
     
