@@ -4,7 +4,7 @@
 
 Manipulated the data persistence with a database by using Fetch(). Resources, models, controllers and associations included. Fully functional CRUD, MVC and RESTful conventions. 
 
-<img src="../imges/example.png" width="640" height="400" />
+<img src="./public/imges/example.png" width="640" height="400" />
 
 ## Live App
 
