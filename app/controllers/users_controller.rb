@@ -1,7 +1,7 @@
 
 class UsersController < ApplicationController
   
-    def index
+     def index
         users = User.all
         render json: users
       end
@@ -11,10 +11,10 @@ class UsersController < ApplicationController
           user.carts.build(checkout: true, user_id: user.id, total: params[:total])
           user.save
           if user.save        
-            @get_cartItem = params[:cartItems]
-            @get_cartId = user.carts.first.id
-            @get_cartItem.each do |cartItem|
-              CartProduct.create(cart_id: @get_cartId, product_id: cartItem.values.first)
+            get_cartItem = params[:cartItems]
+            get_cartId = user.carts.first.id
+            get_cartItem.each do |cartItem|
+              CartProduct.create(cart_id: get_cartId, product_id: cartItem.values.first)
             end
             render json: user
           else
