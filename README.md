@@ -12,7 +12,7 @@ This part was built with Rails-API. Manipulated the data persistence with a data
 
 ## Video Walkthrough
 
-[CLICK HERE]
+[CLICK HERE](https://youtu.be/MyaKC1odjns)
 
 ## Installation
 
