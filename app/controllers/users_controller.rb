@@ -1,6 +1,10 @@
 
 class UsersController < ApplicationController
-  
+     
+      def home
+        render json: {message: "Server is up!"}
+      end
+
      def index
         users = User.all
         render json: users

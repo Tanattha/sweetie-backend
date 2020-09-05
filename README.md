@@ -8,7 +8,7 @@ This part was built with Rails-API. Manipulated the data persistence with a data
 
 ## Live App
 
-[CLICK HERE]
+[CLICK HERE](https://tanattha.github.io/sweetie-frontend/)
 
 ## Video Walkthrough
 
