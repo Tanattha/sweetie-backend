@@ -4,7 +4,7 @@
 
 This part was built with Rails-API. Manipulated the data persistence with a database by using Fetch method to receive and send data from the client side. Resources, models, controllers and associations included. Designed by using MVC model and RESTful conventions. 
 
-<img src="./public/imges/example.png" width="640" height="400" />
+<img src="./public/images/example.png" width="640" height="400" />
 
 ## Live App
 
