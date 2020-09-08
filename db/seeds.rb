@@ -22,7 +22,7 @@ products = [
     {title: "Donut1", price: 5, description: "Rainbow donut with sprinkles", url: "/images/donuts/1.jpg", category: "donut"},
     {title: "Donut2", price: 5, description: "Chocolate donut with sprinkles", url: "/images/donuts/2.jpg", category: "donut"},
     {title: "Donut3", price: 5, description: "Chocolate donut with white chocolate", url: "/images/donuts/3.jpg", category: "donut"},
-    {title: "Cookie1", price: 5, description: "Oatmeal raisin cookie", url: "/images/cookies/1.jpg", category: "cookie"},
+    {title: "Cookie1", price: 5, description: "Chocolate cookie", url: "/images/cookies/1.jpg", category: "cookie"},
     {title: "Cookie2", price: 5, description: "Christmas theme cookie", url: "/images/cookies/2.jpg", category: "cookie"},
     {title: "Cookie3", price: 5, description: "Colorful macaroon", url: "/images/cookies/3.jpg", category: "cookie"},
     {title: "Roll1", price: 5, description: "Chocolate roll", url: "/images/rolls/1.jpg", category: "roll"},
